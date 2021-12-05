@@ -1,29 +1,11 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<section id="home" class="parallax-section">
   <div class="container">
-  <%= link_to "Foods & Drinks", root_path, id: "logo" %>
-    <nav>
-      <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to "Trang Chủ", root_path %></li>
-        <li><%= link_to "Hỗ Trợ", help_path %></li>
-        <% if logged_in? %>
-          <li><%= link_to "Cá Nhân", '#' %></li>
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              Tài Khoản <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Hồ Sơ", current_user %></li>
-              <li><%= link_to "Cài Đặt", '#' %></li>
-              <li class="divider"></li>
-              <li>
-                <%= link_to "Đăng Xuất", logout_path, method: :delete %>
-              </li>
-            </ul>
-        </li>
-        <% else %>
-        <li><%= link_to "Đăng Nhập ", login_path %></li>
-      <% end %>
-      </ul>
-    </nav>
+    <div class="row">
+      <div class="col-md-12 col-sm-12">
+        <h1>ZENTRO RESTAURANT</h1>
+        <h2>CLEAN &amp; SIMPLE DESIGN</h2>
+        <a href="#gallery" class="smoothScroll btn btn-default">LEARN MORE</a>
+      </div>
+    </div>
   </div>
-</header>
+</section>
