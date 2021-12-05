@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
-before_action :correct_user, only: [:edit, :update]
+  before_action :logged_in_user, only: [:index, :edit, :update, :destroy]
+  before_action :correct_user, only: [:edit, :update]
 
   def index
     @users = User.activated_user.paginate(page: params[:page])
@@ -25,12 +25,6 @@ before_action :correct_user, only: [:edit, :update]
     end
   end
 
-  def edit
-
-  end
-
-  def update
-
   end
   private
 
@@ -38,6 +32,4 @@ before_action :correct_user, only: [:edit, :update]
     params.require(:user).permit(:name, :email, :password,
                                 :password_confirmation)
   end
-
-
 end
