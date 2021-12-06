@@ -1,10 +1,6 @@
 class ApplicationController < ActionController::Base
   include SessionsHelper
 
-  def hello
-    render html: "hello, world!"
-  end
-
   private
 
   def logged_in_user
@@ -14,6 +10,4 @@ class ApplicationController < ActionController::Base
       redirect_to login_url
     end
   end
-
-
 end
