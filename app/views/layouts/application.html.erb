@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Zentro</title>
-
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <%= stylesheet_link_tag 'application', media: 'all','data-turbolinks-track': 'reload' %>
@@ -17,11 +18,7 @@
       <div class="alert alert-<%= message_type %>"><%= message %></div>
     <% end %>
     <%= yield %>
-    <%= render 'layouts/header' %>
-    <%= render 'layouts/gallery' %>
-    <%= render 'layouts/menu' %>
-    <%= render 'layouts/contact' %>
-    <%= render 'layouts/footer' %>
+
   </body>
 </html>
 

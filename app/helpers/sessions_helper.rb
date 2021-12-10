@@ -41,11 +41,6 @@ module SessionsHelper
     cookies.permanent[:remember_token] = user.remember_token
   end
 
-  def destroy
-    log_out if logged_in?
-    redirect_to root_url
-  end
-
   def redirect_back_or(default)
     redirect_to(session[:forwarding_url] || default)
     session.delete(:forwarding_url)

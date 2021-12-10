@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_06_095104) do
+ActiveRecord::Schema.define(version: 2021_12_09_130227) do
 
   create_table "categories", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
@@ -67,7 +67,6 @@ ActiveRecord::Schema.define(version: 2021_12_06_095104) do
 
   create_table "users", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name"
-    t.string "password"
     t.string "email"
     t.integer "phone_number"
     t.integer "bank_balance"
