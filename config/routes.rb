@@ -9,13 +9,8 @@ Rails.application.routes.draw do
   root  to: 'static_pages#home'
   post '/login',to: 'sessions#create'
   delete '/logout',to: 'sessions#destroy'
+
   resources :users
-
-  namespace :admin do
-    root "dash_board#index"
-    resources :dash_board, only: :index
-  end
-
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
 end

@@ -7,7 +7,6 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.integer :phone_number
       t.integer :bank_balance
 
-
       t.timestamps
     end
   end

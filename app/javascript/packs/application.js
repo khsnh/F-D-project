@@ -9,13 +9,11 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 require("jquery")
-import "bootstrap"
 
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
 
-import "../stylesheets/application";
 document.addEventListener("turbolinks:load", function() {
     $(function () {
         $('[data-toggle="tooltip"]').tooltip()
@@ -23,3 +21,4 @@ document.addEventListener("turbolinks:load", function() {
     })
 })
 
+import "bootstrap"
