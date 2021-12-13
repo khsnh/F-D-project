@@ -36,13 +36,6 @@ ActiveRecord::Schema.define(version: 2021_12_12_083304) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "microposts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.text "content"
-    t.integer "user_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "order_items", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "price"
     t.string "menu_id"
@@ -74,6 +67,7 @@ ActiveRecord::Schema.define(version: 2021_12_12_083304) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
     t.string "remember_digest"
+    t.boolean "admin", default: false
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.string "activation_digest"
