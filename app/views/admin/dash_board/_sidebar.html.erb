@@ -33,10 +33,10 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./index.html" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Dashboard v1</p>
-                </a>
+                <%= link_to "Categories", admin_categories_path ,class:"nav-link" %>
+              </li>
+              <li class="nav-item">
+                <%= link_to "Products", admin_products_path ,class:"nav-link" %>
               </li>
             </ul>
           </li>

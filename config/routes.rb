@@ -14,9 +14,10 @@ Rails.application.routes.draw do
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
 
-  resources :categories
   namespace :admin do
-    root"dash_board#index"
+    root "dash_board#index"
     resources :dash_board, only: :index
+    resources :categories
+    resources :products
   end
 end
