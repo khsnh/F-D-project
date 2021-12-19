@@ -1,0 +1,24 @@
+<% provide(:title, "Thể Loại") %>
+<h1 class="text-center">Thể Loại</h1>
+<div class="row">
+  <div class="col-md-6 offset-3">
+    <%= form_for([:admin,@product]) do |f| %>
+      <%= render 'shared/error_messages', object: f.object %>
+
+      <label for="product_name">Tên</label>
+      <%= f.text_field :name, class: 'form-control' %>
+
+      <label for="product_content">Nội Dung</label>
+      <%= f.text_field :content, class: 'form-control' %>
+
+      <label for="product_price">Giá Cả</label>
+      <%= f.number_field :price, class: 'form-control' %>
+
+      <span class="image">
+        <%= f.file_field :image %>
+      </span>
+
+      <%= f.submit "Tạo Thể Loại", class: "btn btn-primary mb-3 mt-2" %>
+    <% end %>
+  </div>
+</div>
