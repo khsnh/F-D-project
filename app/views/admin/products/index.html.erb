@@ -1,0 +1,33 @@
+<% provide(:title, 'Tất Cả Món Ăn') %>
+<h1 class="text-center">Tất Cả Món Ăn </h1>
+<%= will_paginate %>
+<div class="button-product">
+  <p><%= link_to "Tạo Món Ăn", new_admin_product_path %></p>
+</div>
+<table class="table table-bordered table-striped" >
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Tên</th>
+      <th>Thành Phần</th>
+      <th>Ảnh</th>
+      <th>Giá Cả</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each_with_index do |product, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= link_to product.name, edit_admin_product_path(product) %></td>
+        <td><%= product.content %></td>
+        <td><%= image_tag product.display_image if product.image.attached? %></td>
+        <td><%= product.price %></td>
+        <td><%= link_to "delete", [:admin, product], method: :delete,
+                        data: { confirm: "You sure?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate %>

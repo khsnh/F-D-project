@@ -1,0 +1,29 @@
+<% provide(:title, 'All category') %>
+<h1 class="text-center">Tất Cả Thể Loại </h1>
+<%= will_paginate %>
+<div class="button-product">
+  <p><%= link_to "CreateProduct", new_admin_category_path %></p>
+</div>
+<table class="table table-bordered table-striped" >
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Nội Dung</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @categories.each_with_index do |category, index| %>
+      <tr>
+        <td><%= index + 1 %></td>
+        <td><%= link_to category.name, edit_admin_category_path(category) %></td>
+        <td><%= category.content %></td>
+        <td><%= link_to "delete", [:admin, category], method: :delete,
+                        data: { confirm: "You sure?" } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate %>
