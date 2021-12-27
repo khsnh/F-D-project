@@ -22,3 +22,4 @@ document.addEventListener("turbolinks:load", function() {
 })
 
 import "bootstrap"
+import "./plus"

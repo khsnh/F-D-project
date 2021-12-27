@@ -1,0 +1,49 @@
+<% @product %>
+<div class="container">
+  <div class="product-category-detail"  >
+    <div class="field-back">
+      <div>
+        <a href="http://localhost:3000/"><button type="button" title="Quay Lại">
+          <---
+          Quay Lại
+        </button></a>
+      </div>
+      <div class="field-img">
+        <div class="item">
+          <%= image_tag @product.display_image if @product.image.attached?  %>
+        </div>
+      </div>
+      <div class="field-content">
+        <h3>ComBo Cuối Năm Giá Chỉ 100,000đ</h3>
+        <div class="field-price">
+          <span>130</span>
+          <span>.</span>
+          <span>000</span>
+          <span>đ</span>
+        </div>
+        <div class="field-note">
+          <span class="field-text">
+            <p>Combo Bao Gồm:</p>
+            <p>-03 miếng gà rán</p>
+            <p>-02 cái bánh bao ngực</p>
+            <p>-02 cốc sữa tươi nguyên chất lấy tại chỗ</p>
+            <p>-01 buger tôm nixitok</p>
+            <p>-01 mỳ ý ăn kèm</p>
+            <p>-02 pepsi(M)</p>
+          </span>
+        </div>
+        <div class="quantity">
+          <div class="lbl">Số Lượng</div>
+          <div class="inner">
+            <button id="btn-minute" class="min" type="button">-</button>
+            <input type="number" id="qty" value="1">
+            <button id="btn-plus" class="plus" type="button">+</button>
+          </div>
+          <br>
+          <br>
+          <button class="btn-card" type="button" title="Thêm Vào Giỏ Hàng"> Thêm Vào Giỏ Hàng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

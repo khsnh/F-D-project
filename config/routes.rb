@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post '/login',to: 'sessions#create'
   delete '/logout',to: 'sessions#destroy'
 
+  resources :products
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
@@ -19,5 +20,6 @@ Rails.application.routes.draw do
     resources :dash_board, only: :index
     resources :categories
     resources :products
+    resources :users
   end
 end
