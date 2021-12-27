@@ -867,3 +867,145 @@ h6 {
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out
 }
+
+// html show prodcuts
+.product-category-detail{
+  width : 1110px;
+  height : 550px;
+  background : #ffffff;
+  text-align : center;
+  margin-top: 60px;
+  display : block ;
+  zoom : 1;
+}
+.field-back{
+  margin-bottom: 30px;
+  text-align : right;
+  margin-right : 30px;
+}
+.button{
+  color: #2f80ed;
+  border-radius: 30px;
+  display : block;
+  background-color : #ffffff;
+}
+.field-img{
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  float: left;
+  margin-right: 70px;
+  padding : 22px 0 0 57px;
+  position : relative ;
+  height : 200px;
+  width: 450px ;
+}
+.item{
+  height : 450px;
+  width : 100%;
+  display : flex;
+}
+*::after,::before{
+  box-sizing: border-box;
+}
+.field-content{
+  text-align : left;
+  overflow : hidden;
+}
+.field-price{
+  color: red;
+  font-size : 24px;
+  font-weight : 700;
+  margin-bottom : 14px;
+}
+.field-note{
+  border-top : 1px dashed #c4c4c4;
+  margin-bottom : 18px;
+  padding-top : 16px;
+}
+.field-text{
+  color : #0e0e0e;
+  font-size : 15px;
+  line-height : 1.4;
+}
+.quantity{
+  margin-bottom:20px;
+  width : 100%;
+  display : block;
+  zoom  : 1;
+}
+.lbl{
+  float : left;
+  margin-right : 10px;
+  padding-top : 5px;
+}
+.inner{
+  width : 150px;
+  float : left ;
+  border-radius : 4px;
+  position : relative ;
+  padding : 3px 30px;
+  height : 30px;
+}
+#btn-minute{
+  border-radius: 5px;
+  width: 30px;
+  height: 29px;
+  cursor: pointer;
+  background: #e1e1e1;
+  text-align: center;
+  color: #0e0e0e;
+  font-weight: 400;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  left: 0;
+}
+#btn-plus{
+  left : auto;
+  right : 0;
+  border-radius: 5px;
+  width: 30px;
+  height: 29px;
+  cursor: pointer;
+  background: #e1e1e1;
+  text-align: center;
+  color: #0e0e0e;
+  font-weight: 400;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+
+.number{
+  width: 100%;
+  text-align: center;
+  padding: 3px 2px 2px;
+  border: 0;
+  background: 0;
+  height: 28px;
+}
+.btn-card{
+  padding-left: 35px;
+  padding-right: 35px;
+  font-weight: 700;
+  background-color: #ffd800;
+  border-color: #ffd800;
+  color: #0e0e0e;
+  border-radius: 5px;
+  font-size: 15px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  display : inline-block;
+
+}
+.br{
+  border: 1px solid #fff;
+}
+.button {
+ padding:5px; cursor:pointer; background:grey; color:white; width:25px; height:15px; text-align:center; display:inline-block;
+}
+
+.button:hover {
+background:black;
+}
