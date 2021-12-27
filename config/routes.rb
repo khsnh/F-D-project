@@ -9,6 +9,10 @@ Rails.application.routes.draw do
   root  to: 'static_pages#home'
   post '/login',to: 'sessions#create'
   delete '/logout',to: 'sessions#destroy'
+  get '/products', to: 'products#index'
+
+  resources :products
+  resources :categories
 
   resources :users
   resources :account_activations, only: [:edit]
