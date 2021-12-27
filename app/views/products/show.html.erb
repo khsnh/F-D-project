@@ -1,0 +1,41 @@
+<% @product %>
+<div class="container">
+  <div class="product-category-detail"  >
+    <div class="field-back">
+      <div>
+        <a href="http://localhost:3000/"><button type="button" title="Quay Lại">
+          <---
+          Quay Lại
+        </button></a>
+      </div>
+      <div class="field-img">
+        <div class="item">
+          <%= image_tag @product.display_image if @product.image.attached?  %>
+        </div>
+      </div>
+      <div class="field-content">
+        <h3><%= @product.name %></h3>
+        <div class="field-price">
+          <span><%= @product.price %></span>
+          <span>đ</span>
+        </div>
+        <div class="field-note">
+          <span class="field-text" style="white-space: pre-wrap " >
+            <%= @product.content %>
+          </span>
+        </div>
+        <div class="quantity">
+          <div class="lbl">Số Lượng</div>
+          <div class="inner">
+            <button id="btn-minute" class="min" type="button">-</button>
+            <input type="number" id="qty" value="1">
+            <button id="btn-plus" class="plus" type="button">+</button>
+          </div>
+          <br>
+          <br>
+          <button class="btn-card" type="button" title="Thêm Vào Giỏ Hàng"> Thêm Vào Giỏ Hàng</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

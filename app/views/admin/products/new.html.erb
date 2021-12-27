@@ -9,13 +9,13 @@
       <%= f.text_field :name, class: 'form-control' %>
 
       <label for="product_content">Nội Dung</label>
-      <%= f.text_field :content, class: 'form-control' %>
+      <%= f.text_area :content, class: 'form-control' %>
 
       <label for="product_price">Giá Cả</label>
       <%= f.number_field :price, class: 'form-control' %>
 
       <span class="image">
-        <%= f.file_field :image %>
+       <%= f.file_field :image %>
       </span>
 
       <%= f.submit "Tạo Thể Loại", class: "btn btn-primary mb-3 mt-2" %>

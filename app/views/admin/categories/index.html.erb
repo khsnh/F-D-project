@@ -1,8 +1,8 @@
-<% provide(:title, 'All category') %>
+<% provide(:title, 'Tất Cả Thể Loại') %>
 <h1 class="text-center">Tất Cả Thể Loại </h1>
 <%= will_paginate %>
 <div class="button-product">
-  <p><%= link_to "CreateProduct", new_admin_category_path %></p>
+  <p><%= link_to "Tạo Thể Loại", new_admin_category_path %></p>
 </div>
 <table class="table table-bordered table-striped" >
   <thead>
@@ -10,7 +10,7 @@
       <th>ID</th>
       <th>Name</th>
       <th>Nội Dung</th>
-      <th>Delete</th>
+      <th></th>
     </tr>
   </thead>
   <tbody>
