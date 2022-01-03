@@ -1,7 +1,7 @@
 class AddMoreToUsers < ActiveRecord::Migration[6.1]
   def change
-    add_column :users , :Surname , :string
-    add_column :users , :Country , :string
-    add_column :users , :State_Region , :string
+    add_column :users , :surname , :string
+    add_column :users , :country , :string
+    add_column :users , :state_region , :string
   end
 end
