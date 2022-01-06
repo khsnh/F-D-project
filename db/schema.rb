@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_12_17_131003) do
+ActiveRecord::Schema.define(version: 2022_01_03_081725) do
 
   create_table "active_storage_attachments", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -51,39 +51,27 @@ ActiveRecord::Schema.define(version: 2021_12_17_131003) do
     t.string "comment"
     t.string "name"
     t.string "product"
-    t.integer "user"
-    t.integer "rate"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "menus", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.string "product_id"
-    t.string "category_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "microposts", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
-    t.text "content"
     t.integer "user_id"
+    t.integer "rate"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "order_items", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "price"
-    t.string "menu_id"
-    t.string "order_id"
+    t.integer "order_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "quantity"
+    t.integer "product_id"
   end
 
   create_table "orders", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.integer "total_price"
-    t.integer "user"
+    t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "status", default: 0
   end
 
   create_table "products", charset: "utf8mb4", collation: "utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -102,17 +90,17 @@ ActiveRecord::Schema.define(version: 2021_12_17_131003) do
     t.integer "bank_balance"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "password_digest"
     t.string "remember_digest"
     t.string "reset_digest"
     t.datetime "reset_sent_at"
     t.string "activation_digest"
     t.boolean "activated", default: false
     t.datetime "activated_at"
-    t.string "Surname"
-    t.string "Country"
-    t.string "State_Region"
     t.boolean "admin", default: false
+    t.string "surname"
+    t.string "country"
+    t.string "state_region"
+    t.string "password_digest"
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 

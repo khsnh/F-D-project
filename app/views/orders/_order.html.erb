@@ -1,0 +1,16 @@
+<h2>Your cart</h2>
+<table>
+  <%= render @cart.order_items %>
+  <tr class="total_line">
+    <td colspan="2">Total</td>
+    <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+  </tr>
+</table>
+
+<%= button_to 'Checkout',
+               update_status_order_path(id: @cart.id),
+              :method => :put %><br>
+<%= button_to 'Empty cart',
+               cart_path(@cart),
+              :method => :delete,
+               data: {:confirm => 'Are you sure?' } %>

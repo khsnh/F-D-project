@@ -19,9 +19,9 @@
     <% @products.each do |product| %>
       <tr>
         <td><%= product.id %></td>
-        <td><%= link_to @product.name, edit_admin_product_path(product) %></td>
+        <td><%= link_to product.name, edit_admin_product_path(product) %></td>
         <td><%= product.content %></td>
-        <td><%= image_tag @product.display_image if @@product.image.attached? %></td>
+        <td><%= image_tag product.display_image if product.image.attached? %></td>
         <td><%= product.price %></td>
         <td><%= link_to "delete", [:admin, product], method: :delete,
                         data: { confirm: "You sure?" } %>
