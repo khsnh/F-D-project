@@ -30,7 +30,7 @@ gem 'rspec-rails', '~> 4.0.0'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 gem 'dotenv-rails'
-gem "will_paginate", "~> 3.3.1", :require => nil
+gem "will_paginate"
 gem 'jquery-rails'
 gem 'image_processing'
 gem 'mini_magick'

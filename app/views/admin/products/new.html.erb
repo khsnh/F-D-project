@@ -14,6 +14,9 @@
       <label for="product_price">Giá Cả</label>
       <%= f.number_field :price, class: 'form-control' %>
 
+      <label for="product_category_id">Thể Loại</label>
+      <%= f.select :category_id, Category.pluck(:name, :id) , class: 'form-control' %>
+
       <span class="image">
         <%= f.file_field :image %>
       </span>

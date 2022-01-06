@@ -9,29 +9,72 @@
   </select>
 </div>
 
-<div class = "product-list">
-  <ul class = "items">
-    <li>
-      <div class="content">
-        <a href="/combo-ti-c-cu-i-nam-169-000d.html">
-          <img loading= "lazy" alt src="https://dscnnwjxnwl3f.cloudfront.net/media/catalog/product/cache/584039753b87a8d227764e04fc461e3e/y/e/year-and-party-534x374px-02.jpg">
-        </a>
-
-        <div class="field-bottom">
-          <span class="f-small"></span>
-          <span class="f-big"></span>
-        </div>
-        <h3>
-          <a href="/combo-ti-c-cu-i-nam-169-000d.html">Combo Tiệc Cuối năm  1 Tỷ</a>
-        </h3>
-        <div class="field-price">
-          <span>1</span>
-          <span>Tỷ</span>
-        </div>
-        <div class="field-btn">
-          <button type="button" title="Add to cart">Add to cart</button>
-        </div>
-      </div>
-    </li>
-  </ul>
+<% @categories.each do |category| %>
+<div class="list-menu" style="top: 130px; position: fixed; bottom:auto;">
+  <li class="active">
+    <a href="/promotion.html" title="Promotion">Promotion</a>
+  </li>
+  <h4>
+    <%= link_to category.name, category, style:"text-align:center"%>
+  </h4>
+  <li class>
+    <a href="/burger.html" title="Burger"></a>
+  </li>
+  <li class>
+    <a href="/combo.html" title="Combo"></a>
+  </li>
+  <li class>
+    <a href="/value.html" title="Value"></a>
+  </li>
+  <li class>
+  <li class>
+    <a href="/set.html" title="Pack"></a>
+  </li>
+  <li class>
+    <a href="/chicken-set.html" title="Chicken Set"></a>
+  </li>
+  <li class>
+    <a href="/chicken.html" title="Chicken"></a>
+  </li>
+  <li class>
+    <a href="/rice.html" title="Rice"></a>
+  </li>
+  <li class>
+    <a href="/dessert.html" title="Dessert"></a>
+  </li>
+  <li class>
+    <a href="/drinks.html" title="Drinks"></a>
+  </li>
 </div>
+
+  <div class = "product-list">
+    <ul class = "items">
+      <% category.products.each do |product| %>
+        <li>
+          <div class="content">
+            <%= link_to product do %>
+              <div class="product-imagee">
+              <%= image_tag product.product_image if product.image.attached? %>
+              </div>
+            <% end -%>
+            <div class="field-bottom">
+              <span class="f-small"></span>
+              <span class="f-big"></span>
+            </div>
+            <h3>
+              <%= link_to product.name, product %>
+            </h3>
+            <div class="field-price">
+              <span>1</span>
+              <span>Tỷ</span>
+            </div>
+            <div class="field-btn">
+              <button type="button" title="Add to cart">Add to cart</button>
+            </div>
+          </div>
+        </li>
+      <% end -%>
+    </ul>
+  </div>
+<% end -%>
+
