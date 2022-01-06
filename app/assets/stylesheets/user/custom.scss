@@ -922,6 +922,8 @@ h6 {
   font-size : 15px;
   line-height : 1.4;
 }
+.quantity{
+=======
 .qty{
   margin-bottom:20px;
   width : 100%;
@@ -929,6 +931,9 @@ h6 {
   zoom  : 1;
 }
 .lbl{
+  float : left;
+  margin-right : 10px;
+  padding-top : 5px;
   float: left;
   margin-right : 10px;
   padding-top : 5px;
