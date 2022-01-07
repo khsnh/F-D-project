@@ -6,7 +6,7 @@ class Admin::ProductsController < Admin::AdminController
   end
 
   def index
-    @products = Product.paginate(page: params[:page])
+    @products = Product.paginate(page: params[:page], per_page: 10)
   end
 
   def create
@@ -47,5 +47,6 @@ class Admin::ProductsController < Admin::AdminController
 
     def product_params
       params.require(:product).permit(:name, :price , :content, :category_id)
+      params.require(:product).permit(:name, :price , :content, :category_id )
     end
 end

@@ -1,6 +1,6 @@
 <% provide(:title, 'Tất Cả Món Ăn') %>
 <h1 class="text-center">Tất Cả Món Ăn </h1>
-<%= will_paginate %>
+<%= will_paginate class:"digg_pagination" %>
 <div class="button-product">
   <p><%= link_to "Tạo Món Ăn", new_admin_product_path %></p>
 </div>
@@ -16,9 +16,9 @@
     </tr>
   </thead>
   <tbody>
-    <% @products.each_with_index do |product, index| %>
+    <% @products.each do |product| %>
       <tr>
-        <td><%= index + 1 %></td>
+        <td><%= product.id %></td>
         <td><%= link_to product.name, edit_admin_product_path(product) %></td>
         <td><%= product.content %></td>
         <td><%= image_tag product.display_image if product.image.attached? %></td>
@@ -30,4 +30,4 @@
     <% end %>
   </tbody>
 </table>
-<%= will_paginate %>
+<%= will_paginate class:"digg_pagination" %>

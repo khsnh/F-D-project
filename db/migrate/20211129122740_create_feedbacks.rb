@@ -4,7 +4,7 @@ class CreateFeedbacks < ActiveRecord::Migration[6.1]
       t.string :comment
       t.string :name
       t.string :product
-      t.integer :user
+      t.integer :user_id
       t.integer :rate
 
       t.timestamps
