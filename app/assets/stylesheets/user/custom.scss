@@ -1028,7 +1028,6 @@ li {
     color: #fff;
     padding: 7px 24px;
 }
-=======
 // html show prodcuts
 .product-category-detail{
   width : 1110px;
@@ -1089,8 +1088,6 @@ li {
   font-size : 15px;
   line-height : 1.4;
 }
-.quantity{
-=======
 .qty{
   margin-bottom:20px;
   width : 100%;
@@ -1179,4 +1176,60 @@ background:black;
   height: 400px;
   object-fit: cover;
 }
-
+.icon_cart{
+  width: 100px;
+  position: relative;
+  margin-top: 7px;
+  transition: all 0.3s ease;
+}
+// .icon_cart:hover{
+//   background-color: #000;
+// }
+// .active {
+//   background-color: #04AA6D;
+// }
+.cart_icon{
+  color: #0f010e;
+}
+.show_item{
+  padding-bottom: 20px;
+}
+.table-item{
+  display: flex;
+  align-items: center;
+}
+.name-item{
+  flex: left;
+  box-sizing: border-box;
+  position: relative;
+  flex-direction:column;
+}
+.D-U-item{
+  display: flex;
+  float-right: 10px ;
+  width: 12.70417%;
+  text-transform: capitalize;
+  border-radius: 50px;
+}
+.destroy-item:hover{
+  color: red;
+}
+.trade-button-mua{
+  margin-left: 800px;
+  width:200px;
+  max-height: 400px;
+  line-height: 1.5;
+  border-radius: 50px;
+}
+.trade-button-xoa{
+  margin-left: 800px;
+  width:200px;
+  line-height: 1.5;
+  border-radius: 50px;
+}
+.trade-button-mua:hover{
+  color: blue;
+}
+.trade-button-xoa:hover{
+  color: red;
+}
