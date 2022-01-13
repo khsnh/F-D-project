@@ -3,7 +3,7 @@ class Order < ActiveRecord::Base
 
   enum status: [:ordering, :ordered, :confirm]
 
-  has_many :order_items, :dependent => :destroy
+  has_many :order_items, dependent: :destroy
 
   def add_product(product_id, quantity)
     current_item = order_items.find_by_product_id(product_id)
