@@ -1233,3 +1233,40 @@ background:black;
 .trade-button-xoa:hover{
   color: red;
 }
+.star {
+  color: #F79321;
+}
+.sao-star {
+  font-size: 20spx;
+}
+.sao-star:hover {
+  color: #F79321;
+  cursor: pointer;
+}
+.font-item {
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 1.5
+}
+.font-item .review-score {
+  font-size: 14px;
+  background-color: #9FC43A;
+  border-radius: 4px;
+  padding: 0px 4px;
+  color: #FFFFFF;
+  display: inline-block;
+}
+.font-items .review-text {
+  color: #9FC43A;
+  font-weight: bold;
+}
+.star {
+  color: #F79321;
+  top: 0px;
+}
+.hide{
+  display :none;
+}
+.form-check-input {
+  height: 1em !important;
+}

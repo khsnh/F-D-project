@@ -4,6 +4,7 @@ class User < ApplicationRecord
   before_create :create_activation_digest
 
   has_many :orders, dependent: :destroy
+  has_many :user_rating_products
 
   validates :name, presence: true, length: { maximum: 50 }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
