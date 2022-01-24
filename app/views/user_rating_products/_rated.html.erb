@@ -1,0 +1,16 @@
+<script src="https://code.jquery.com/jquery-latest.js"></script>
+<% rating = product.user_rating_products.pluck(:rate) %>
+<% average = rating.sum / rating.count.to_f %>
+<% for i in 1..average.round(0) do %>
+  <i class="fa-solid star"></i>
+<% end %>
+<div class="font-item mt-2">
+  <span class="review-score"><%= average %></span>
+  <% if average >= 4 %>
+    <strong class="review-text">Tuyệt vời</strong>
+  <% elsif average >= 2 %>
+    <strong class="review-text">Trung bình</strong>
+  <% else %>
+    <strong class="review-text">Kém</strong>
+  <% end %>
+</div>

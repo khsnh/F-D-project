@@ -1,9 +1,13 @@
 class Order < ActiveRecord::Base
   before_save :update_subtotal
 
-  enum status: [:ordering, :ordered, :confirm]
+  belongs_to :user
 
   has_many :order_items, dependent: :destroy
+
+  enum status: [:ordering, :ordered, :confirm, :rejected]
+
+  scope :not_ordering, -> {where.not(status: "ordering")}
 
   def add_product(product_id, quantity)
     current_item = order_items.find_by_product_id(product_id)

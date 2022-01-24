@@ -10,11 +10,9 @@ Rails.application.routes.draw do
   delete '/logout',to: 'sessions#destroy'
   get '/products', to: 'products#index'
 
-  resources :products
   resources :categories
+  resources :user_rating_products
 
-
-  resources :products
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
@@ -36,5 +34,10 @@ Rails.application.routes.draw do
     resources :categories
     resources :products
     resources :users
+    resources :orders do
+      member do
+        put :update_status
+      end
+    end
   end
 end
