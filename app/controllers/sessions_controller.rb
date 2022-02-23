@@ -1,4 +1,5 @@
 class SessionsController < ApplicationController
+  skip_before_action :find_cart
   def new
   end
 

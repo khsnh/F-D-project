@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post '/login',to: 'sessions#create'
   delete '/logout',to: 'sessions#destroy'
   get '/products', to: 'products#index'
+  get '/feedback',to: 'feedbacks#index'
 
   resources :products
   resources :categories
@@ -21,7 +22,9 @@ Rails.application.routes.draw do
   resources :products, only: [:index]
   resources :carts, only: [:show, :destroy]
   resources :order_items, only: [:create, :update, :destroy]
-  root to: "products#index"
+  root to: "static_pages#home"
+
+  resources :feedbacks, only: [:create]
 
   resources :orders do
     member do
@@ -29,11 +32,14 @@ Rails.application.routes.draw do
     end
   end
 
+
+
   namespace :admin do
     root "dash_board#index"
     resources :dash_board, only: :index
     resources :categories
     resources :products
     resources :users
+    resources :feedbacks
   end
 end

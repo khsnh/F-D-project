@@ -1,0 +1,22 @@
+<% provide(:title, 'Ý kiến khách hàng') %>
+<h1 class="text-center">Ý kiến khách hàng</h1>
+<table class="table table-bordered table-striped" >
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Tên</th>
+      <th>Feedbacks</th>
+      <th>Image</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @feedbacks.each do |feedback| %>
+      <tr>
+        <td><%= feedback.id %></td>
+        <td><%= link_to feedback.user.name , [:admin, feedback] %></td>
+        <td><%= feedback.comment %></td>
+        <td><%= image_tag feedback.display_image if feedback.image.attached? %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
