@@ -1,0 +1,61 @@
+<div class="wrapper">
+  <main class="main">
+    <div class="container">
+      <div class="page-opinion-custumer">
+        <div class="f-banner">
+          <img src="/grs-static/images/s-banner-4.png" alt>
+        </div>
+        <div class="register-shop">
+          <h4 class="test-center" style="margin-bottom: 30px;">Your opinion helps us to improve service quality </h4>
+          <%= form_for @feedback do |f| %>
+
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Content</label>
+              <div class="col-sm-9">
+                <%= f.text_area :comment, class: 'form-control' , placeholder: "Leave your message here", cols: "30" , rows: "5"%>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-sm-3 col-form-label">Images</label>
+              <div class="col-sm-9">
+                <div class="fileUploader">
+                  <div class="errorsContainer"></div>
+                  <%= f.file_field :image %>
+                  <p class="note-fileUploader" style="font-size: 15px;line-height: 1.4;">Max file size: 5mb, accepted: jpg|gif|png</p>
+                  <div style="position: relative; display: flex; align-items: center; justify-content: center; flex-wrap; width: 100%;"></div>
+                </div>
+              </div>
+            </div>
+            <div class="form-group line-top">
+              <h4>Information</h4>
+            </div>
+            <div class="form-group row">
+              <label for="r_name" class="col-md-3 col-form-label">Fullname</label>
+              <div class="col-md-9">
+                <%= f.text_field :name, class: 'form-control', placeholder: "Enter your name"%>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="r_tel" class="col-md-3 col-form-label">Profuct's name</label>
+              <div class="col-md-9">
+                <%= f.text_field :product, class: 'form-control', placeholder: "Enter your product's name"%>
+              </div>
+            </div>
+            <div class="form-action row">
+              <div class="col-sm-12 text-center">
+                <%= f.submit 'Send', class: "btn btn-primary"%>
+              </div>
+            </div>
+            <p class="text-center" style="padding-top: 30px;">
+              "Bo may cam on!!"
+              <br>
+              "(No cai dia chi nha bon t den tan noi)"
+            </p>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+

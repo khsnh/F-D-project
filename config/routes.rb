@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   post '/login',to: 'sessions#create'
   delete '/logout',to: 'sessions#destroy'
   get '/products', to: 'products#index'
+  get '/feedback',to: 'feedbacks#index'
 
   resources :categories
   resources :user_rating_products
@@ -20,6 +21,8 @@ Rails.application.routes.draw do
   resources :products, only: [:show,:destroy]
   resources :carts, only: [:show, :destroy]
   resources :order_items, only: [:create, :update, :destroy]
+  root to: "static_pages#home"
+  resources :feedbacks, only: [:create]
   root to:'products#show'
 
   resources :orders do
@@ -27,6 +30,8 @@ Rails.application.routes.draw do
       put :update_status
     end
   end
+
+
 
   namespace :admin do
     root "dash_board#index"
