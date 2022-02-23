@@ -1,0 +1,21 @@
+<h1 class="text-center">Tất Cả Đơn Hàng </h1>
+<table class="table table-bordered table-striped" >
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Tên</th>
+      <th>Giá Cả</th>
+      <th>Trạng Thái</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= link_to order.user.name, edit_admin_order_path(order) %></td>
+        <td><%= order.total_price %></td>
+        <td><%= order.status %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -13,7 +13,7 @@ class Admin::CategoriesController < Admin::AdminController
   end
 
   def create
-    @category = Category.new category_params
+    @category = Category.new(category_params)
     if @category.save
       flash[:success] = "Tạo category thành công."
       redirect_to admin_categories_path

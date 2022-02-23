@@ -11,20 +11,19 @@ Rails.application.routes.draw do
   get '/products', to: 'products#index'
   get '/feedback',to: 'feedbacks#index'
 
-  resources :products
   resources :categories
+  resources :user_rating_products
 
-  resources :products
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
 
-  resources :products, only: [:index]
+  resources :products, only: [:show,:destroy]
   resources :carts, only: [:show, :destroy]
   resources :order_items, only: [:create, :update, :destroy]
   root to: "static_pages#home"
-
   resources :feedbacks, only: [:create]
+  root to:'products#show'
 
   resources :orders do
     member do
@@ -40,6 +39,10 @@ Rails.application.routes.draw do
     resources :categories
     resources :products
     resources :users
-    resources :feedbacks
+    resources :orders do
+      member do
+        put :update_status
+      end
+    end
   end
 end

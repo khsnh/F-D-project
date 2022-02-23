@@ -1,0 +1,25 @@
+<% provide(:title, "ADMIN GIỎ HÀNG") %>
+<h1 class="text-center">ADMIN GIỎ HÀNG</h1>
+
+<%= render @order.order_items %>
+
+  <br>
+<div style="margin-left: 10px;">
+<% if @order.status == "confirm" %>
+  <div class="trade-button-xoa">
+    <%= button_to 'Hủy Đơn Hàng',
+     update_status_admin_order_path(id: @order.id , status: "rejected"),
+    :method => :put,
+     data: {:confirm => 'Bạn Đã Chắc Chưa?' },
+     style:"border-radius: 50px" %>
+  </div>
+<% else %>
+  <div class="trade-button-mua">
+    <%= button_to 'Xác Nhận Đơn Hàng',
+     update_status_admin_order_path(id: @order.id, status: "confirm"),
+    :method => :put,
+    data: {:confirm => 'Bạn Đã Chắc Chưa' },
+    style:"border-radius: 50px" %>
+  </div>
+<% end %>
+</div>
