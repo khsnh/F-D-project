@@ -9,19 +9,21 @@ Rails.application.routes.draw do
   post '/login',to: 'sessions#create'
   delete '/logout',to: 'sessions#destroy'
   get '/products', to: 'products#index'
+  get '/feedback',to: 'feedbacks#index'
 
-  resources :products
   resources :categories
+  resources :user_rating_products
 
-  resources :products
   resources :users
   resources :account_activations, only: [:edit]
   resources :password_resets, only: [:new, :create, :edit, :update]
 
-  resources :products, only: [:index]
+  resources :products, only: [:show,:destroy]
   resources :carts, only: [:show, :destroy]
   resources :order_items, only: [:create, :update, :destroy]
-  root to: "products#index"
+  root to: "static_pages#home"
+  resources :feedbacks, only: [:create]
+  root to:'products#show'
 
   resources :orders do
     member do
@@ -29,11 +31,18 @@ Rails.application.routes.draw do
     end
   end
 
+
+
   namespace :admin do
     root "dash_board#index"
     resources :dash_board, only: :index
     resources :categories
     resources :products
     resources :users
+    resources :orders do
+      member do
+        put :update_status
+      end
+    end
   end
 end

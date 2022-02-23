@@ -1,0 +1,19 @@
+<%= form_tag user_rating_products_path, remote: true, class: 'd-flex align-items-center w-50', id:'form-rating' do %>
+  <%= radio_button_tag "rate", "1", false, class: 'form-check-input hide ' %>
+  <%= label_tag "rate_1", '☆', value: '1', class: 'sao-star' %>
+  <%= radio_button_tag "rate", "2", false, class: 'form-check-input hide ' %>
+  <%= label_tag "rate_2", '☆', value: '2', class: 'sao-star' %>
+  <%= radio_button_tag "rate", "3", false, class: 'form-check-input hide ' %>
+  <%= label_tag "rate_3", '☆', value: '3', class: 'sao-star' %>
+  <%= radio_button_tag "rate", "4", false, class: 'form-check-input hide ' %>
+  <%= label_tag "rate_4", '☆', value: '4', class: 'sao-star' %>
+  <%= radio_button_tag "rate", "5", false, class: 'form-check-input hide ' %>
+  <%= label_tag "rate_5", '☆', value: '5', class: 'sao-star' %>
+  <%= hidden_field_tag :product_id, product.id %>
+  <%= submit_tag 'Đánh Giá', class: "btn-card click-button" %>
+<% end %>
+<script>
+  $('.form-check-input').change(function() {
+    $(this).parent().find(".click-button").change()
+  });
+</script>

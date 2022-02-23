@@ -3,22 +3,20 @@ class ApplicationController < ActionController::Base
 
   include SessionsHelper
 
-  protect_from_forgery with: :exception
-
-  private
 
   def logged_in_user
     unless logged_in?
       store_location
       flash[:danger] = "Please log in."
-      redirect_to login_url
+
+      redirect_to login_path
     end
   end
 
   def current_cart
-    Order.find(session[:cart_id])
-  rescue
-    order = current_user.orders.create!
+    return redirect_to login_path unless current_user
+    order = Order.find_by(id: session[:cart_id])
+    order = current_user.orders.create! unless order
     session[:cart_id] = order.id
     order
   end

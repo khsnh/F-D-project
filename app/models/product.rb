@@ -1,5 +1,7 @@
 class Product < ApplicationRecord
-  has_many :order_items
+  has_many :order_items, dependent: :destroy
+  has_many :user_rating_products, dependent: :destroy
+
   before_destroy :check_if_has_order_item
 
   validates :name, presence: true, length: { maximum: 100 }
@@ -10,7 +12,11 @@ class Product < ApplicationRecord
   has_one_attached :image
 
   def display_image
-    image.variant(resize_to_limit: [80, 80])
+    image.variant(resize_to_limit: [100, 100])
+  end
+
+  def show_image
+    image.variant(resize_to_limit: [400, 400])
   end
 
 

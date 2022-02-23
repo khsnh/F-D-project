@@ -1,16 +1,23 @@
-<h2>Your cart</h2>
-<table>
-  <%= render @cart.order_items %>
-  <tr class="total_line">
-    <td colspan="2">Total</td>
-    <td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
-  </tr>
-</table>
+<h1>Giỏ Hàng Của Bạn</h1>
 
-<%= button_to 'Checkout',
+  <%= render @cart.order_items %>
+  <br>
+  <br>
+  <br>
+  <br>
+
+<div class="trade-button-mua">
+<%= button_to 'Mua Sản Phẩm',
                update_status_order_path(id: @cart.id),
-              :method => :put %><br>
-<%= button_to 'Empty cart',
+              :method => :put,
+              data: {:confirm => 'Are you sure?' },
+              style:"border-radius: 50px" %>
+              <br>
+</div>
+<div class="trade-button-xoa">
+<%= button_to 'Xóa Tất Cả',
                cart_path(@cart),
               :method => :delete,
-               data: {:confirm => 'Are you sure?' } %>
+               data: {:confirm => 'Are you sure?' },
+               style:"border-radius: 50px" %>
+</div>
